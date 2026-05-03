@@ -1,5 +1,8 @@
 package com.Alpha.InventryManagementSystem.Model;
 
+import java.time.LocalDateTime;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -25,4 +28,6 @@ public class Category {
 	@ManyToOne
 	@JoinColumn(name = "parent_category_id")
 	private Category parentCategoryId;
+	@Column(updatable = false)
+	private LocalDateTime createdAt;
 }
